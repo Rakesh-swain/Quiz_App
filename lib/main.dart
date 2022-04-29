@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print("Answer choosen");
+  }
+
   @override
   Widget build(BuildContext context) {
     var _questions = [
@@ -12,15 +16,19 @@ class MyApp extends StatelessWidget {
       "What's your favourite animal ?"
     ];
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Rakesh Swain'),
         ),
-        body: Column(children: const [
-          Text("The question!"),
-          RaisedButton(child: Text("Answer 1"), onPressed: null),
-          RaisedButton(child: Text("Answer 1"), onPressed: null),
-          RaisedButton(child: Text("Answer 1"), onPressed: null),
+        body: Column(children: [
+          const Text("The question!"),
+          RaisedButton(
+              child: const Text("Answer 1"), onPressed: answerQuestion),
+          RaisedButton(
+              child: const Text("Answer 2"), onPressed: answerQuestion),
+          RaisedButton(
+              child: const Text("Answer 3"), onPressed: answerQuestion),
         ]),
       ),
     );
