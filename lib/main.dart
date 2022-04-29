@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,7 +34,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Rakesh Swain'),
         ),
         body: Column(children: [
-          Text(_questions[_questionIndex]),
+          Question(_questions[_questionIndex]),
           RaisedButton(
               child: const Text("Answer 1"), onPressed: _answerQuestion),
           RaisedButton(
