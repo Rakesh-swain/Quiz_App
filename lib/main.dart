@@ -45,10 +45,11 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Rakesh Swain'),
         ),
         body: Column(children: [
-          Question(_questions[_questionIndex]),
-          Answer(_answerQuestion),
-          Answer(_answerQuestion),
-          Answer(_answerQuestion),
+          Question(_questions[_questionIndex]['questionText'] as String),
+          ...(_questions[_questionIndex]['answers'] as List<String>)
+              .map((answer) {
+            return Answer(_answerQuestion, answer);
+          }).toList()
         ]),
       ),
     );
